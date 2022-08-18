@@ -12,18 +12,20 @@ var symb;
 function generatePassword() {
   var passLength = window.prompt("Choose a number between 8-128 to generate a password.");
   if(passLength > 128){
-    window.alert("Please choose a number less than 128.")
+    window.alert("Please choose a number less than 128.");
+    generatePassword()
   }else if(passLength < 8){
-    window.alert("Please choose a number more than 8.")
+    window.alert("Please choose a number more than 8.");
+    generatePassword()
   }
-  else {
-    window.prompt("Your password")
-  }
+
+  console.log(passLength);
 
 lower = confirm("Do you want to use lowercase letters?");
 if (lower) {
   var lowercaseChar = alert("Your password will have lowercase letters.");
 }
+console.log(lower);
 
 upper = confirm("Do you want to use uppercase letters?");
 if (upper) {
@@ -41,9 +43,32 @@ if (symb) {
 }
 
 if (lower === false && upper === false && numb === false && symb === false) {
-  return "You have to select one character type.";
-};
+  alert ("You have to select one characteristic.")
+  generatePassword()
 
+}
+
+if (lower) {
+  password.concat(lowerCase);
+}
+if (upper) {
+  password.concat(upperCase);
+}
+if (numb) {
+  password.concat(numbers);
+}
+if (symb) {
+  password.concat(symbols);
+}
+
+let finalPassword =""
+for (let i=0; i < passLength; i++) {
+  let rng =[Math.floor(Math.random() * password.length)];
+  finalPassword += finalPassword[rng];
+}
+return finalPassword
+
+};
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
