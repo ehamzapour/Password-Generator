@@ -23,3 +23,4 @@
 Project is: completed
 
 ## Link to Deployed Application
+https://ehamzapour.github.io/Password-Generator/
