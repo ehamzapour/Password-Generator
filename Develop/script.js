@@ -4,8 +4,21 @@ var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 var symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "~", "+", "?", "-"]
 
+function generatePassword() {
+  var passLength = window.prompt("Choose a number between 8-128 characters to generate a password.");
+  if(passLength > 128){
+    window.alert("Please choose a number less than 128.")
+    generatePassword()
+  }else if(passLength < 8){
+    window.alert("Please choose a number more than 8.")
+    generatePassword()
+  }
+  }
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
+
+
 
 // Write password to the #password input
 function writePassword() {
