@@ -1,5 +1,4 @@
-# Password-Generator
-This code helps the user generate a password by choosing different characteristic options. 
+# Password-Generator 
 
 ## Table of Contents
 * General Info
@@ -9,7 +8,8 @@ This code helps the user generate a password by choosing different characteristi
 * Link to Deployed Application
 
 ## General Information
-* 
+* This code helps the user generate a password by choosing different characteristic options.
+* Different box prompts appear to choose from
 
 ## Technologies Used
 * HTML
@@ -17,9 +17,9 @@ This code helps the user generate a password by choosing different characteristi
 * Javascript
 
 ## Screenshot
-![ScreenshotOne]()
+![SCREENSHOT](./images/PWSCREENSHOT.png)
 
 ## Project Status
-Project is: In Progress
+Project is: completed
 
 ## Link to Deployed Application
