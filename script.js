@@ -10,64 +10,68 @@ var upper;
 var numb;
 var symb;
 
+// Prompt message for user to choose password length.
 function generatePassword() {
   var passLength = window.prompt("Choose a number between 8-128 to generate a password.");
-  if(passLength > 128){
+  if (passLength > 128) {
     window.alert("Please choose a number less than 128.");
     generatePassword()
-  }else if(passLength < 8){
+  } else if (passLength < 8) {
     window.alert("Please choose a number more than 8.");
     generatePassword()
   }
 
   console.log(passLength);
 
-lower = confirm("Do you want to use lowercase letters?");
-if (lower) {
-  var lowercaseChar = alert("Your password will have lowercase letters.");
-}
-console.log(lower);
+  // Prompt for users to include one of the following in their password
+  lower = confirm("Do you want to use lowercase letters?");
+  if (lower) {
+    var lowercaseChar = alert("Your password will have lowercase letters.");
+  }
+  console.log(lower);
 
-upper = confirm("Do you want to use uppercase letters?");
-if (upper) {
-  var uppercaseChar = alert("Your password will have uppercase letters.");
-}
+  upper = confirm("Do you want to use uppercase letters?");
+  if (upper) {
+    var uppercaseChar = alert("Your password will have uppercase letters.");
+  }
 
-numb = confirm("Do you want to use numbers?");
-if (numb) {
-  var numbChar = alert("Your password will have uppercase letters.");
-}
+  numb = confirm("Do you want to use numbers?");
+  if (numb) {
+    var numbChar = alert("Your password will have uppercase letters.");
+  }
 
-symb = confirm("Do you want to use symbols?");
-if (symb) {
-  var symbChar = alert("Your password will have symbols.");
-}
+  symb = confirm("Do you want to use symbols?");
+  if (symb) {
+    var symbChar = alert("Your password will have symbols.");
+  }
 
-if (lower === false && upper === false && numb === false && symb === false) {
-  alert ("You have to select one characteristic.")
-  generatePassword()
+  if (lower === false && upper === false && numb === false && symb === false) {
+    alert("You have to select one characteristic.")
+    generatePassword()
 
-}
+  }
 
-if (lower) {
-  passwordChar = passwordChar.concat(lowerCase);
-}
-if (upper) {
-  passwordChar = passwordChar.concat(upperCase);
-}
-if (numb) {
-  passwordChar = passwordChar.concat(numbers);
-}
-if (symb) {
-  passwordChar = passwordChar.concat(symbols);
-}
+  // Chooses one of the approved characteristics into the generator
+  if (lower) {
+    passwordChar = passwordChar.concat(lowerCase);
+  }
+  if (upper) {
+    passwordChar = passwordChar.concat(upperCase);
+  }
+  if (numb) {
+    passwordChar = passwordChar.concat(numbers);
+  }
+  if (symb) {
+    passwordChar = passwordChar.concat(symbols);
+  }
 
-let finalPassword =""
-for (let i = 0; i < passLength; i++) {
-  let rng =[Math.floor(Math.random() * passwordChar.length)];
-  finalPassword = finalPassword + passwordChar[rng];
-}
-return finalPassword;
+  // this for loop runs until approved characteristics are randomly selected and generates the password
+  let finalPassword = ""
+  for (let i = 0; i < passLength; i++) {
+    let rng = [Math.floor(Math.random() * passwordChar.length)];
+    finalPassword = finalPassword + passwordChar[rng];
+  }
+  return finalPassword;
 
 };
 

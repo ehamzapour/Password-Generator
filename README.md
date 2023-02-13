@@ -8,8 +8,7 @@
 * Link to Deployed Application
 
 ## General Information
-* This code helps the user generate a password by choosing different characteristic options.
-* Different box prompts appear to choose from
+This application features HTML, CSS, and JavaScript to generate a password. The user will be prompted with messages to select between 8-128 characters, lowercase or uppercase letters, numbers, and special characters to include in their password. If they do not select one of the characteristics, they will be alerted with a message to choose at least one. 
 
 ## Technologies Used
 * HTML
